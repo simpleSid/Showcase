@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Луи — ресторан, Брянск</title>
+    <meta
+      name="description"
+      content="Ресторан Луи в Брянске — светлый зал, спокойная атмосфера и кухня для неспешных вечеров. Бронирование по телефону."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="top" class="page-top-anchor" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="#top">Луи</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Открыть меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-desktop" id="site-nav" aria-label="Основная навигация">
+          <a href="#about">О ресторане</a>
+          <a href="#menu">Меню</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="site-video-bg" aria-hidden="true">
+      <video
+        id="hero-video-a"
+        class="site-video-bg__video is-active"
+        playsinline
+        muted
+        preload="auto"
+        poster="img/hero.webp"
+        width="1600"
+        height="1067"
+      ></video>
+      <video
+        id="hero-video-b"
+        class="site-video-bg__video"
+        playsinline
+        muted
+        preload="auto"
+        poster="img/hero.webp"
+        width="1600"
+        height="1067"
+      ></video>
+      <div class="site-video-bg__dim" aria-hidden="true"></div>
+    </div>
+
+    <main class="site-main">
+      <section class="hero" aria-label="Главный экран">
+        <div class="hero-content">
+          <div class="wrap">
+            <p class="hero-kicker">Ресторан · Брянск</p>
+            <h1>Луи</h1>
+            <p class="hero-lead">
+              Утром выпечка и кофе, вечером - ужины и вино.
+            </p>
+            <a class="btn" href="#contacts">Забронировать стол</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="wrap about-grid">
+          <div class="about-text reveal">
+            <p class="section-label">О ресторане</p>
+            <h2 class="section-title">Вкус и атмосфера</h2>
+            <div class="about-rotate" data-about-rotate>
+              <div class="about-rotate-panes">
+                <div class="about-rotate-pane is-active" data-about-pane>
+                  <p class="section-lead">
+                    Ресторан «Луи» — идеальное место для тех, кто ценит вкусную еду и эстетику. Интерьер
+                    выполнен в светлых тонах и создаёт уютную атмосферу. Здесь хочется не спешить — за
+                    завтраком с ароматной выпечкой, за ужином при приглушённом свете и бокале вина. Мы
+                    собираем за столом тех, кому важны и вкус, и та самая неспешная тишина хорошего вечера.
+                  </p>
+                </div>
+                <div class="about-rotate-pane" data-about-pane inert>
+                  <p class="section-lead">
+                    Персонал очень приветливый и внимательный — всегда готов помочь с выбором блюд и
+                    напитков. Нам важно, чтобы вы чувствовали себя не
+                    как в ресторане «на выход», а как у гостеприимных хозяев дома.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-showcase reveal delay-1" id="about-gallery">
+            <div
+              class="about-carousel"
+              data-interior-carousel
+              role="region"
+              aria-roledescription="карусель"
+              aria-label="Фотографии интерьера ресторана"
+            >
+              <button type="button" class="carousel-btn" data-interior-prev aria-label="Предыдущее фото">
+                ‹
+              </button>
+              <div class="about-carousel-viewport">
+                <figure class="about-carousel-slide is-active">
+                  <img src="img/interior-01.webp" alt="Интерьер ресторана Луи" width="800" height="800" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-02.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-03.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-04.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-05.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-06.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-07.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-08.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-09.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-10.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-11.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <figure class="about-carousel-slide">
+                  <img src="img/interior-12.webp" alt="" width="800" height="800" loading="lazy" />
+                </figure>
+                <div class="about-carousel-dots" data-interior-dots aria-label="Выбор фото"></div>
+              </div>
+              <button type="button" class="carousel-btn" data-interior-next aria-label="Следующее фото">
+                ›
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-page" aria-labelledby="menu-title">
+        <div class="wrap">
+          <header class="menu-head reveal">
+            <p class="section-label">Меню</p>
+            <h2 class="menu-title__text" id="menu-title">Блюда и цены</h2>
+            <nav class="menu-tabs" aria-label="Категории меню" role="tablist" data-menu-tabs>
+              <button type="button" class="menu-tab is-active" role="tab" aria-selected="true" data-menu-tab="breakfast">
+                Завтрак
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="hot">
+                Горячее
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="snacks">
+                Закуска
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="bakery">
+                Выпечка
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="salads">
+                Салат
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="soups">
+                Суп
+              </button>
+              <button type="button" class="menu-tab" role="tab" aria-selected="false" data-menu-tab="desserts">
+                Десерт
+              </button>
+            </nav>
+          </header>
+
+          <div class="menu-panels reveal delay-1" data-menu-panels>
+            <section class="menu-panel is-active" role="tabpanel" data-menu-panel="breakfast" aria-labelledby="menu-title">
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Блинчики с уткой и грибами</div>
+                  <div class="menu-item__meta">740 ₽ · 1 шт.</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Сырники с варёной сгущёнкой и вишней</div>
+                  <div class="menu-item__meta">490 ₽</div>
+                </li>
+                <li class="menu-item menu-item--accent">
+                  <div class="menu-item__name">Авокадо-тост с слабосолёной форелью</div>
+                  <div class="menu-item__meta">850 ₽ · 300 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Блинчики с нежным копчёным окороком и сыром</div>
+                  <div class="menu-item__meta">530 ₽ · 270 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Бенедикт на ватрушке с нежным копчёным окороком</div>
+                  <div class="menu-item__meta">590 ₽ · 290 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Бенедикт на ватрушке с слабосолёной семгой</div>
+                  <div class="menu-item__meta">790 ₽ · 290 г</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="hot" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Паста с томлёной уткой и перечным соусом</div>
+                  <div class="menu-item__meta">860 ₽ · 320 г</div>
+                </li>
+                <li class="menu-item menu-item--accent">
+                  <div class="menu-item__name">Равиоли с цыплёнком в соусе бёрблан с травами</div>
+                  <div class="menu-item__meta">560 ₽ · 290 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Паста с креветками, томатами и оливами</div>
+                  <div class="menu-item__meta">880 ₽ · 410 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Куриное бедро с муссом пармезан и брокколи</div>
+                  <div class="menu-item__meta">690 ₽ · 350 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Бургер с двумя котлетами из мраморной говядины</div>
+                  <div class="menu-item__meta">890 ₽ · 250 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Котлета из индейки с зелёной гречкой и брокколи</div>
+                  <div class="menu-item__meta">770 ₽ · 350 г</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="snacks" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Печёный перец с соусом тоннато</div>
+                  <div class="menu-item__meta">550 ₽ · 150 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Улитки Эскарго с чесночным маслом</div>
+                  <div class="menu-item__meta">790 ₽ · 130 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Паштет из печени цыплёнка с луковым конфитюром</div>
+                  <div class="menu-item__meta">490 ₽ · 200 г</div>
+                </li>
+                <li class="menu-item menu-item--accent">
+                  <div class="menu-item__name">Вителло-тоннато</div>
+                  <div class="menu-item__meta">890 ₽ · 160 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Тарелка с деликатесами к вину</div>
+                  <div class="menu-item__meta">1&nbsp;390 ₽ · 230 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Баскский тартар с чоризо и пикантной заправкой</div>
+                  <div class="menu-item__meta">690 ₽ · 190 г</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="bakery" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Круассан миндальный</div>
+                  <div class="menu-item__meta">360 ₽ · 1 шт.</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Ватрушка со свежими ягодами</div>
+                  <div class="menu-item__meta">360 ₽</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Круассан классический</div>
+                  <div class="menu-item__meta">190 ₽</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Круассан с кремом Шантильи и смородиной</div>
+                  <div class="menu-item__meta">290 ₽</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="salads" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">
+                    Салат с хрустящими баклажанами, сладкими томатами и сметанным соусом
+                  </div>
+                  <div class="menu-item__meta">590 ₽ · 200 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Зелёный салат с сырным кремом и печеньем из пармезана</div>
+                  <div class="menu-item__meta">550 ₽ · 160 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Греческий салат с муссом фета-оливка</div>
+                  <div class="menu-item__meta">490 ₽ · 170 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Цезарь с крутонами из багета и хрустящим беконом</div>
+                  <div class="menu-item__meta">750 ₽ · 250 г</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="soups" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Буйабес с морепродуктами</div>
+                  <div class="menu-item__meta">740 ₽ · 350 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Луковый суп с сыром грюйер</div>
+                  <div class="menu-item__meta">630 ₽ · 350 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Консоме с перепелиным яйцом и равиоли с грибами</div>
+                  <div class="menu-item__meta">390 ₽ · 250 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Борщ с уткой и эклером с салом</div>
+                  <div class="menu-item__meta">470 ₽ · 300 г</div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="menu-panel" role="tabpanel" data-menu-panel="desserts" aria-labelledby="menu-title" hidden>
+              <ul class="menu-items" role="list">
+                <li class="menu-item">
+                  <div class="menu-item__name">Медовик на гречишном мёде</div>
+                  <div class="menu-item__meta">270 ₽ · 1 шт.</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Бабка с бананом, кардамоном и мороженым</div>
+                  <div class="menu-item__meta">640 ₽ · 230 г</div>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__name">Блинчики креп-сюзетт со свежими ягодами</div>
+                  <div class="menu-item__meta">690 ₽ · 300 г</div>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <p class="menu-note reveal">
+            Состав, вес порции и цена могут обновляться — ориентируйтесь на меню в зале и рекомендации
+            команды. Винная карта и дополнительные позиции — у официантов.
+          </p>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews" aria-labelledby="reviews-title">
+        <div class="wrap">
+          <div class="reviews-intro reveal">
+            <p class="section-label">Отзывы</p>
+            <h2 class="section-title" id="reviews-title">Гости о «Луи»</h2>
+          </div>
+
+          <div class="carousel reveal delay-1" data-carousel>
+            <p class="carousel-live" aria-live="polite">
+              <span data-carousel-live></span>
+            </p>
+            <div class="carousel-viewport">
+              <ul class="carousel-track" data-carousel-track>
+                <li class="carousel-slide">
+                  <article class="review-card">
+                    <p class="review-stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                    <div class="review-meta">
+                      <span class="review-name">Гость</span>
+                      <span class="review-date">15 января</span>
+                    </div>
+                    <p class="review-text">
+                      Добрый день! Луи, о Луи… В суете после Нового года не успела пообедать, заглянула
+                      в «Луи» и, как оказалось, не зря. Приятная атмосфера и ненавязчивая музыка
+                      располагают к отдыху. В центре зала стоит живая ёлка с необычными игрушками, а
+                      милые флажки под потолком создают ощущение уюта. Заботливый персонал порадовал
+                      — принесли подставку для сумочки и периодически подливали чай. Вкусная утка
+                      буквально таяла во рту, но больше всего покорили ленивые вареники в волшебно
+                      вкусном соусе. То самое чувство, когда стараешься есть как можно дольше, чтобы
+                      растянуть удовольствие.
+                    </p>
+                    <p class="review-source">По материалам Яндекс Карт</p>
+                  </article>
+                </li>
+                <li class="carousel-slide">
+                  <article class="review-card">
+                    <p class="review-stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                    <div class="review-meta">
+                      <span class="review-name">Серафим Бродецкий</span>
+                      <span class="review-date">29 декабря 2025</span>
+                    </div>
+                    <p class="review-text">
+                      Впервые посетил данное заведение. Сразу стоит отметить, что атмосфера приятная,
+                      не было какой-то неуместной музыки, как оно бывает в ресторанах. Персонал
+                      дружелюбный, отдельно хочется отметить официантку Полину — всё грамотно
+                      подсказала насчёт еды, потому что я многие позиции не знал и ингредиенты.
+                      Относительно еды всё понравилось, буду впоследствии приходить сюда, чтобы ещё
+                      раз отведать понравившиеся позиции; лично для себя отметил суп буйабес. По
+                      поводу напитков тоже нет пререканий. Ставлю 5 звёзд — всё на достойном уровне.
+                    </p>
+                    <p class="review-source">По материалам Яндекс Карт</p>
+                  </article>
+                </li>
+                <li class="carousel-slide">
+                  <article class="review-card">
+                    <p class="review-stars" aria-label="Оценка 5 из 5">★★★★★</p>
+                    <div class="review-meta">
+                      <span class="review-name">Алиса Симутенкова</span>
+                      <span class="review-date">30 апреля</span>
+                    </div>
+                    <p class="review-text">
+                      Самое лучшее кафе, сюда ходим уже больше 30 раз:) Самые любимые — щучьи
+                      котлетки без соуса. Очень добрые официанты, очень вкусные десерты и выпечка.
+                      Атмосфера очень красивая. В уборных тоже уютно и приятно. Спасибо за такую
+                      заботу о гостях.
+                    </p>
+                    <p class="review-source">По материалам Яндекс Карт</p>
+                  </article>
+                </li>
+              </ul>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="carousel-btn" data-carousel-prev aria-label="Предыдущий отзыв">
+                ‹
+              </button>
+              <div class="carousel-dots" data-carousel-dots aria-label="Выбор отзыва"></div>
+              <button type="button" class="carousel-btn" data-carousel-next aria-label="Следующий отзыв">
+                ›
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="contacts">
+        <div class="wrap contact-grid">
+          <div class="reveal">
+            <p class="section-label">Контакты</p>
+            <h2 class="section-title">Приходите в гости</h2>
+            <p class="section-lead">
+              Забронируйте стол заранее — в пятницу и на выходных зал заполняется быстрее. Полный
+              график и статус «открыто / закрыто» смотрите на карточке в Яндекс Картах.
+            </p>
+            <div class="contact-details">
+              <dl>
+                <div>
+                  <dt>Адрес</dt>
+                  <dd>
+                    ул. имени А.Ф. Войстроченко, 5, Брянск
+                  </dd>
+                </div>
+                <div>
+                  <dt>Телефон</dt>
+                  <dd><a href="tel:+74832306699">+7 (4832) 30-66-99</a></dd>
+                </div>
+                <div>
+                  <dt>Время работы</dt>
+                  <dd>ВС-ПТ 9:00-22:00. СБ 9:00-00.00</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="contact-actions">
+              <a class="btn btn--dark" href="tel:+74832306699">Позвонить</a>
+              <a
+                class="btn btn--ghost"
+                href="https://yandex.ru/maps/org/lui/95872812470/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Маршрут на карте</a
+              >
+            </div>
+          </div>
+          <div class="contact-card contact-map reveal delay-1" aria-label="Карта: ресторан Луи">
+            <div class="contact-map__frame">
+              <script
+                type="text/javascript"
+                charset="utf-8"
+                async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0f38dcd875f15b52bc23cc168204f6e7e39d0997dbcdd156bb0c1c5bbcf97209&amp;width=750&amp;height=453&amp;lang=ru_RU&amp;scroll=true"
+              ></script>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>© <span id="y"></span> Ресторан Луи, Брянск</span>
+        <span>ул. имени А.Ф. Войстроченко, 5</span>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var header = document.querySelector(".site-header");
+        var toggle = document.querySelector(".nav-toggle");
+        var nav = document.querySelector(".nav-desktop");
+
+        function onScroll() {
+          header.classList.toggle("is-scrolled", window.scrollY > 40);
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        function syncHeaderMenuOpen() {
+          if (!header || !nav) return;
+          header.classList.toggle("is-menu-open", nav.classList.contains("is-open"));
+        }
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            var open = nav.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            toggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+            syncHeaderMenuOpen();
+          });
+          nav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              nav.classList.remove("is-open");
+              toggle.setAttribute("aria-expanded", "false");
+              toggle.setAttribute("aria-label", "Открыть меню");
+              syncHeaderMenuOpen();
+            });
+          });
+        }
+
+        var heroVideoA = document.getElementById("hero-video-a");
+        var heroVideoB = document.getElementById("hero-video-b");
+        if (heroVideoA && heroVideoB) {
+          var heroReduced =
+            window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          var heroSrc = "video/video1.mov";
+          var crossfadeMs = 600;
+          var crossfadeSec = crossfadeMs / 1000;
+          var isCrossfading = false;
+
+          function safePlay(v) {
+            return v.play().catch(function () {});
+          }
+
+          function show(active, standby) {
+            active.classList.add("is-active");
+            standby.classList.remove("is-active");
+          }
+
+          function prepStandby(v) {
+            if (v.src && v.src.indexOf(heroSrc) !== -1) {
+              // ok
+            } else {
+              v.src = heroSrc;
+            }
+            v.loop = false;
+            try {
+              v.currentTime = 0;
+            } catch (e) {}
+          }
+
+          function swap(active, standby) {
+            show(standby, active);
+            active.pause();
+            isCrossfading = false;
+          }
+
+          function maybeCrossfade(active, standby) {
+            if (heroReduced || isCrossfading) return;
+            if (!isFinite(active.duration) || active.duration <= 0) return;
+            if (active.currentTime < 0.1) return;
+
+            var left = active.duration - active.currentTime;
+            if (left <= crossfadeSec) {
+              isCrossfading = true;
+              prepStandby(standby);
+              safePlay(standby);
+              show(standby, active);
+              setTimeout(function () {
+                swap(active, standby);
+              }, crossfadeMs);
+            }
+          }
+
+          // init
+          heroVideoA.src = heroSrc;
+          heroVideoB.src = heroSrc;
+          heroVideoA.loop = false;
+          heroVideoB.loop = false;
+          show(heroVideoA, heroVideoB);
+
+          if (heroReduced) {
+            heroVideoA.pause();
+            heroVideoB.pause();
+          } else {
+            safePlay(heroVideoA);
+          }
+
+          heroVideoA.addEventListener("timeupdate", function () {
+            maybeCrossfade(heroVideoA, heroVideoB);
+          });
+          heroVideoB.addEventListener("timeupdate", function () {
+            maybeCrossfade(heroVideoB, heroVideoA);
+          });
+        }
+
+        var y = document.getElementById("y");
+        if (y) y.textContent = new Date().getFullYear();
+
+        var menuTabsRoot = document.querySelector("[data-menu-tabs]");
+        var menuPanelsRoot = document.querySelector("[data-menu-panels]");
+        if (menuTabsRoot && menuPanelsRoot) {
+          var tabs = menuTabsRoot.querySelectorAll("[data-menu-tab]");
+          var panels = menuPanelsRoot.querySelectorAll("[data-menu-panel]");
+          var activeKey = "breakfast";
+
+          function setMenuActive(key) {
+            activeKey = key;
+            tabs.forEach(function (t) {
+              var on = t.getAttribute("data-menu-tab") === key;
+              t.classList.toggle("is-active", on);
+              t.setAttribute("aria-selected", on ? "true" : "false");
+              t.setAttribute("tabindex", on ? "0" : "-1");
+            });
+            panels.forEach(function (p) {
+              var on = p.getAttribute("data-menu-panel") === key;
+              p.classList.toggle("is-active", on);
+              if (on) p.removeAttribute("hidden");
+              else p.setAttribute("hidden", "");
+            });
+          }
+
+          tabs.forEach(function (t) {
+            t.setAttribute("tabindex", t.classList.contains("is-active") ? "0" : "-1");
+            t.addEventListener("click", function () {
+              setMenuActive(t.getAttribute("data-menu-tab"));
+            });
+          });
+
+          menuTabsRoot.addEventListener("keydown", function (e) {
+            var keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+            if (keys.indexOf(e.key) === -1) return;
+            e.preventDefault();
+            var list = Array.prototype.slice.call(tabs);
+            var idx = list.findIndex(function (t) {
+              return t.getAttribute("data-menu-tab") === activeKey;
+            });
+            if (idx < 0) idx = 0;
+            if (e.key === "Home") idx = 0;
+            else if (e.key === "End") idx = list.length - 1;
+            else if (e.key === "ArrowLeft") idx = (idx - 1 + list.length) % list.length;
+            else if (e.key === "ArrowRight") idx = (idx + 1) % list.length;
+            var next = list[idx];
+            setMenuActive(next.getAttribute("data-menu-tab"));
+            next.focus();
+          });
+
+          setMenuActive(activeKey);
+        }
+
+        var reveals = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+          );
+          reveals.forEach(function (el) {
+            io.observe(el);
+          });
+        } else {
+          reveals.forEach(function (el) {
+            el.classList.add("is-visible");
+          });
+        }
+
+        var aboutRoot = document.querySelector("[data-about-rotate]");
+        if (aboutRoot) {
+          var aboutPanes = aboutRoot.querySelectorAll("[data-about-pane]");
+          var aboutIdx = 0;
+          var aboutMs = 10000;
+          function aboutShow(n) {
+            aboutPanes.forEach(function (pane, idx) {
+              var on = idx === n;
+              pane.classList.toggle("is-active", on);
+              if (on) pane.removeAttribute("inert");
+              else pane.setAttribute("inert", "");
+            });
+          }
+          var aboutReduced =
+            window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!aboutReduced && aboutPanes.length > 1) {
+            setInterval(function () {
+              aboutIdx = (aboutIdx + 1) % aboutPanes.length;
+              aboutShow(aboutIdx);
+            }, aboutMs);
+          } else {
+            aboutShow(0);
+          }
+        }
+
+        var icRoot = document.querySelector("[data-interior-carousel]");
+        if (icRoot) {
+          var icSlides = icRoot.querySelectorAll(".about-carousel-slide");
+          var icDotsHost = icRoot.querySelector("[data-interior-dots]");
+          var icIx = 0;
+          var icMs = 5000;
+          function icShow(n) {
+            icSlides.forEach(function (s, i) {
+              s.classList.toggle("is-active", i === n);
+            });
+            if (icDotsHost) {
+              var icBtns = icDotsHost.querySelectorAll("button");
+              icBtns.forEach(function (b, i) {
+                b.setAttribute("aria-current", i === n ? "true" : "false");
+              });
+            }
+          }
+          function icStep(delta) {
+            icIx = (icIx + delta + icSlides.length) % icSlides.length;
+            icShow(icIx);
+          }
+          var icPrev = icRoot.querySelector("[data-interior-prev]");
+          var icNextBtn = icRoot.querySelector("[data-interior-next]");
+          if (icPrev) icPrev.addEventListener("click", function () { icStep(-1); });
+          if (icNextBtn) icNextBtn.addEventListener("click", function () { icStep(1); });
+          if (icDotsHost && icSlides.length) {
+            for (var ik = 0; ik < icSlides.length; ik++) {
+              (function (kk) {
+                var icBtn = document.createElement("button");
+                icBtn.type = "button";
+                icBtn.className = "about-carousel-dot";
+                icBtn.setAttribute(
+                  "aria-label",
+                  "Показать снимок " + (kk + 1) + " из " + icSlides.length
+                );
+                icBtn.addEventListener("click", function () {
+                  icIx = kk;
+                  icShow(icIx);
+                });
+                icDotsHost.appendChild(icBtn);
+              })(ik);
+            }
+          }
+          var icReduced =
+            window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!icReduced && icSlides.length > 1) {
+            setInterval(function () {
+              icStep(1);
+            }, icMs);
+          }
+          icShow(0);
+        }
+
+        var root = document.querySelector("[data-carousel]");
+        if (!root) return;
+
+        var track = root.querySelector("[data-carousel-track]");
+        var prevBtn = root.querySelector("[data-carousel-prev]");
+        var nextBtn = root.querySelector("[data-carousel-next]");
+        var dotsHost = root.querySelector("[data-carousel-dots]");
+        var live = root.querySelector("[data-carousel-live]");
+        var slides = track ? track.querySelectorAll(".carousel-slide") : [];
+
+        if (!track || slides.length === 0) return;
+
+        var index = 0;
+        var total = slides.length;
+
+        function slideLabel(i) {
+          var card = slides[i].querySelector(".review-name");
+          var name = card ? card.textContent.trim() : "Отзыв " + (i + 1);
+          return "Отзыв: " + name;
+        }
+
+        function announce() {
+          if (live) live.textContent = slideLabel(index);
+        }
+
+        function setTransform() {
+          track.style.transform = "translateX(" + -index * 100 + "%)";
+        }
+
+        function updateDots() {
+          if (!dotsHost) return;
+          var buttons = dotsHost.querySelectorAll("button");
+          buttons.forEach(function (btn, i) {
+            btn.setAttribute("aria-current", i === index ? "true" : "false");
+          });
+        }
+
+        function go(delta) {
+          index = (index + delta + total) % total;
+          setTransform();
+          updateDots();
+          announce();
+        }
+
+        function goTo(i) {
+          index = i;
+          setTransform();
+          updateDots();
+          announce();
+        }
+
+        for (var d = 0; d < total; d++) {
+          (function (i) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "carousel-dot";
+            b.setAttribute("aria-label", "Показать отзыв " + (i + 1));
+            b.addEventListener("click", function () {
+              goTo(i);
+            });
+            dotsHost.appendChild(b);
+          })(d);
+        }
+
+        if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); });
+        if (nextBtn) nextBtn.addEventListener("click", function () { go(1); });
+
+        setTransform();
+        updateDots();
+        announce();
+
+        var touchStartX = null;
+        track.addEventListener(
+          "touchstart",
+          function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+          },
+          { passive: true }
+        );
+        track.addEventListener(
+          "touchend",
+          function (e) {
+            if (touchStartX == null) return;
+            var dx = e.changedTouches[0].screenX - touchStartX;
+            touchStartX = null;
+            if (Math.abs(dx) < 40) return;
+            if (dx < 0) go(1);
+            else go(-1);
+          },
+          { passive: true }
+        );
+      })();
+    </script>
+  </body>
+</html>

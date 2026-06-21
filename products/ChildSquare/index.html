@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChildSquare — детские площадки нового поколения</title>
+    <meta
+      name="description"
+      content="Проектируем, производим и монтируем детские, спортивные и воркаут-площадки для дворов, школ, парков и жилых комплексов."
+    >
+    <link rel="stylesheet" href="styles.css?v=form-input-type-2">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="ChildSquare">
+        <span class="brand-symbol" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+        <span>ChildSquare</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Открыть меню</span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="#construction">Проект</a>
+        <a href="#systems">Системы</a>
+        <a href="#build">Производство</a>
+        <a href="#timeline">Процесс</a>
+        <a href="#contact">Заявка</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="ChildSquare">
+        <div class="hero-kicker reveal">
+          <span>ChildSquare</span>
+          <span>общественные пространства</span>
+        </div>
+
+        <div class="hero-type reveal">
+          <p class="signal">Проектируем и строим под ключ</p>
+          <h1>
+            <span>Детские</span>
+            <span>площадки</span>
+            <span>как архитектура двора</span>
+          </h1>
+        </div>
+
+        <div class="hero-stage reveal" aria-label="Примеры детских и спортивных площадок">
+          <figure class="hero-photo">
+            <img src="assets/hero-courtyard-system.webp" alt="Современная детская и спортивная площадка с цветовыми зонами покрытия и графитовыми стойками">
+          </figure>
+          <div class="hero-spec">
+            <span>01</span>
+            <strong>Сталь, EPDM, безопасные зоны, монтаж и приемка в одной ответственности.</strong>
+          </div>
+        </div>
+
+        <div class="hero-copy reveal">
+          <p>
+            Мы соединяем игровой сценарий, производство металлоконструкций и устройство покрытия, чтобы двор выглядел собранным, а не случайно укомплектованным.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#contact">Собрать проект</a>
+            <a class="button button-plain" href="#systems">Посмотреть системы</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="studio-strip" aria-label="Направления работы">
+        <div class="studio-strip-item">
+          <span>Детские комплексы</span>
+          <strong>3-12 лет</strong>
+        </div>
+        <div class="studio-strip-item">
+          <span>Спортивные зоны</span>
+          <strong>школы и ЖК</strong>
+        </div>
+        <div class="studio-strip-item">
+          <span>Воркаут</span>
+          <strong>антивандально</strong>
+        </div>
+        <div class="studio-strip-item">
+          <span>Покрытие</span>
+          <strong>EPDM / SBR</strong>
+        </div>
+      </section>
+
+      <section class="construction-film" id="construction">
+        <div class="construction-copy reveal">
+          <p class="signal">Проектная сборка</p>
+          <h2>Сценарий, покрытие, стойки.</h2>
+          <p>
+            Анимация показывает площадку как инженерный объект: основание, цветовая логика, несущие элементы и безопасные расстояния появляются по очереди.
+          </p>
+        </div>
+
+        <div class="construction-screen reveal">
+          <canvas
+            class="construction-canvas"
+            data-construction-canvas
+            width="1280"
+            height="860"
+            aria-label="Анимация строительства спортивной площадки с видом сверху под углом"
+          ></canvas>
+          <div class="construction-ui" aria-hidden="true">
+            <span data-construction-step>00 / поле</span>
+            <span>site plan</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="systems" id="systems">
+        <div class="section-head systems-head reveal">
+          <p class="signal">Системы</p>
+          <h2>Три сценария территории, один визуальный язык.</h2>
+          <div class="section-brief">
+            <p>
+              Подбираем не отдельные изделия, а состав площадки под возраст, поток людей и характер места.
+            </p>
+            <div class="brief-tags" aria-label="Параметры подбора площадки">
+              <span>возраст</span>
+              <span>нагрузка</span>
+              <span>покрытие</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-lab reveal">
+          <div class="system-tabs" role="tablist" aria-label="Тип площадки">
+            <button class="system-tab is-active" type="button" role="tab" aria-selected="true" data-system="yard">Двор ЖК</button>
+            <button class="system-tab" type="button" role="tab" aria-selected="false" data-system="school">Школа</button>
+            <button class="system-tab" type="button" role="tab" aria-selected="false" data-system="workout">Воркаут</button>
+          </div>
+
+          <div class="system-preview">
+            <img data-system-image src="assets/playground-module.png" alt="Детский комплекс для двора ЖК">
+          </div>
+
+          <div class="system-info" aria-live="polite">
+            <p class="system-label" data-system-label>Возраст 3-12</p>
+            <h3 data-system-title>Живая площадка во дворе</h3>
+            <p data-system-copy>
+              Комбинируем лазательные модули, баланс, тихие игровые зоны и покрытие с понятной навигацией для детей разных возрастов.
+            </p>
+            <ul data-system-list>
+              <li>игровой сценарий по возрастам</li>
+              <li>мягкое покрытие с цветовой логикой</li>
+              <li>безопасные узлы и закрытый крепеж</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="build" id="build">
+        <div class="build-copy reveal">
+          <p class="signal">Производство</p>
+          <h2>От эскиза до сдачи отвечает одна команда.</h2>
+          <p>
+            Мы смотрим на площадку как на инженерный объект: несущие стойки, закладные, траектории движения, высоты падения, обслуживание и зимнюю эксплуатацию.
+          </p>
+        </div>
+
+        <div class="build-grid">
+          <div class="build-metric reveal">
+            <strong>01</strong>
+            <span>Проверяем участок и ограничения до сметы</span>
+          </div>
+          <div class="build-metric reveal">
+            <strong>02</strong>
+            <span>Производим стойки, узлы, рукоходы и модули</span>
+          </div>
+          <div class="build-metric reveal">
+            <strong>03</strong>
+            <span>Монтируем оборудование и покрытие под ключ</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="material-band" aria-label="Материалы и навигация">
+        <div class="material-note reveal">
+          <p class="signal">Материалы</p>
+          <h2>Цвет работает как навигация, а не как декор.</h2>
+          <p>
+            Акцентные стойки и зоны покрытия помогают считывать активную игру, спорт, отдых, проходы и безопасные отступы.
+          </p>
+        </div>
+        <figure class="wide-image reveal">
+          <img src="assets/material-navigation.webp" alt="Цветовые зоны покрытия, маршруты и стойки площадки как система навигации">
+        </figure>
+      </section>
+
+      <section class="timeline" id="timeline">
+        <div class="section-head timeline-head reveal">
+          <p class="signal">Процесс</p>
+          <h2>От фото участка до сдачи.</h2>
+          <p>
+            Двигаемся короткими этапами: фиксируем ограничения, собираем сценарий, производим элементы и сдаем площадку с проверкой безопасности.
+          </p>
+        </div>
+        <ol class="timeline-list">
+          <li class="reveal">
+            <figure class="timeline-image">
+              <img src="assets/process-measure.webp" alt="План участка, телефон с фото и рулетка для замера">
+            </figure>
+            <div>
+              <span>Фото и замер</span>
+              <p>Получаем размеры, адрес, фото участка и ограничения по срокам.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <figure class="timeline-image">
+              <img src="assets/process-handover.webp" alt="Готовая спортивная площадка с листом проверки и уровнем">
+            </figure>
+            <div>
+              <span>Сценарий</span>
+              <p>Определяем возраст, нагрузку, состав оборудования и зоны покрытия.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <figure class="timeline-image">
+              <img src="assets/process-scenario.webp" alt="Схема площадки с игровыми, спортивными зонами и дорожками">
+            </figure>
+            <div>
+              <span>Производство</span>
+              <p>Изготавливаем элементы, комплектуем крепеж и готовим объект к монтажу.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <figure class="timeline-image">
+              <img src="assets/process-production.webp" alt="Стойки, крепеж и элементы воркаут-площадки на производственном столе">
+            </figure>
+            <div>
+              <span>Сдача</span>
+              <p>Монтируем, проверяем устойчивость, покрытие и безопасные расстояния.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-copy reveal">
+          <p class="signal">Старт проекта</p>
+          <h2>Закажите звонок по площадке.</h2>
+          <p>
+            Можно начать без технического задания: достаточно фото, примерных размеров и понимания, кто будет пользоваться площадкой.
+          </p>
+        </div>
+
+        <div class="contact-stage reveal">
+          <form class="contact-form" data-form novalidate autocomplete="off">
+            <div class="form-head">
+              <span>Заявка на звонок</span>
+              <h3>Обсудим участок и первый состав площадки</h3>
+            </div>
+            <label data-field="name">
+              <span>Имя</span>
+              <input type="text" name="name" autocomplete="off" placeholder="Как к вам обращаться" aria-describedby="name-error">
+              <small class="field-error" id="name-error" data-error-for="name"></small>
+            </label>
+            <label data-field="phone">
+              <span>Телефон</span>
+              <input type="tel" name="phone" autocomplete="off" inputmode="tel" placeholder="+7 900 000-00-00" aria-describedby="phone-error">
+              <small class="field-error" id="phone-error" data-error-for="phone"></small>
+            </label>
+            <label>
+              <span>Задача</span>
+              <textarea name="message" rows="4" placeholder="Двор ЖК, школа или парк; примерный размер; что нужно разместить"></textarea>
+            </label>
+            <button class="button button-dark" type="submit">Получить концепцию</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            <p class="form-footnote">Нажимая кнопку, вы отправляете данные для обратной связи по проекту.</p>
+            <div class="contact-social">
+              <p>Если вы хотите связаться с нами сейчас, можно сделать это через соц сети:</p>
+              <div class="contact-social-links">
+                <a href="tg://resolve?phone=79160109737" aria-label="Связаться с нами в Telegram">
+                  <img src="assets/icon-telegram.svg" alt="" aria-hidden="true">
+                  <span>Telegram</span>
+                </a>
+                <a href="max://contact/79160109737" aria-label="Связаться с нами в MAX">
+                  <img src="assets/icon-max.svg" alt="" aria-hidden="true">
+                  <span>MAX</span>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>ChildSquare</p>
+      <a href="#top">Наверх</a>
+    </footer>
+
+    <script src="main.js?v=php-mail-1"></script>
+  </body>
+</html>

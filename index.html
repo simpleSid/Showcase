@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Showcase — лендинги под задачу</title>
+    <meta
+      name="description"
+      content="Витрина лендингов: проекты, подход и форма связи для заказа посадочной страницы."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Showcase">
+        <span>show</span><span>case</span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#projects">Проекты</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Связаться</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-panel">
+          <p class="hero-note">Landing pages / portfolio / contact</p>
+          <h1 id="hero-title">Нужен лендинг?</h1>
+          <p>
+            Я создаю посадочные страницы для услуг, заведений и проектов. Ниже —
+            примеры работ, по которым можно понять мой подход к структуре, визуалу и заявке.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#projects">Смотреть проекты</a>
+            <a class="button button-dark" href="#contact">Обсудить лендинг</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <img src="assets/hero-showcase.webp" alt="" />
+          <span class="hero-cut"></span>
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="Подход">
+        <span>Первый экран</span>
+        <span>Галерея работ</span>
+        <span>Адаптив</span>
+        <span>Форма связи</span>
+        <span>Страница проекта</span>
+      </section>
+
+      <section class="projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <p>Галерея проектов</p>
+          <h2 id="projects-title">Мои проекты можно открыть и посмотреть вживую.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card-large" data-project-card>
+            <a href="products/Lui/index.html" aria-label="Открыть проект Луи">
+              <figure>
+                <img src="products/previews/lui.png" alt="Скриншот лендинга ресторана Луи" />
+              </figure>
+              <div class="project-copy">
+                <span>Restaurant landing</span>
+                <h3>Луи</h3>
+                <p>
+                  Лендинг ресторана с выразительным первым экраном, меню, отзывами,
+                  контактами и понятным действием для бронирования.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card" data-project-card>
+            <a href="products/ChildSquare/index.html" aria-label="Открыть проект ChildSquare">
+              <figure>
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Скриншот лендинга ChildSquare"
+                />
+              </figure>
+              <div class="project-copy">
+                <span>Construction landing</span>
+                <h3>ChildSquare</h3>
+                <p>
+                  Лендинг для B2B-проекта: сильная визуальная подача, описание систем,
+                  процесс работы и заявка на расчёт.
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="about-title">
+          <p>Обо мне</p>
+          <h2 id="about-title">Я собираю лендинги, которые сразу объясняют суть.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Беру идею, услугу или продукт и превращаю в страницу, где человеку понятно:
+            что это, почему стоит доверять и как оставить заявку.
+          </p>
+          <p>
+            Работаю со структурой, визуальным стилем, адаптивом и финальной сборкой.
+            Каждый проект получает отдельный характер, а не универсальную оболочку.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-aside">
+          <p>Связь</p>
+          <h2 id="contact-title">Расскажи, какой лендинг нужен.</h2>
+          <a class="telegram-link" data-telegram-link href="https://t.me/simpleSid">Telegram</a>
+        </div>
+
+        <form class="contact-form" data-contact-form>
+          <label>
+            Имя
+            <input name="name" autocomplete="name" placeholder="Как к тебе обращаться" required />
+          </label>
+          <label>
+            Контакт
+            <input name="contact" autocomplete="email" placeholder="Почта или Telegram" required />
+          </label>
+          <label>
+            Что нужно сделать
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Например: лендинг для услуги, проекта или продукта"
+              required
+            ></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button button-dark" type="submit">Написать на почту</button>
+            <a class="button button-light" data-telegram-link href="https://t.me/simpleSid">В Telegram</a>
+          </div>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
