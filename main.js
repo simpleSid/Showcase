@@ -20,13 +20,14 @@ if (form) {
 
     const subject = encodeURIComponent("Заявка на лендинг");
     const body = encodeURIComponent(
-      `Имя: ${name}\nКонтакт: ${contact}\n\nЧто нужно сделать:\n${message}`
+      `Имя: ${name}\nКонтакт: ${contact}\n\nОписание задачи:\n${message}`
     );
 
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 
     if (statusNode) {
-      statusNode.textContent = "Открыл почтовый клиент. Если письмо не появилось, напиши в Telegram.";
+      statusNode.textContent =
+        "Открылся почтовый клиент. Если письмо не появилось, напишите в Telegram.";
     }
   });
 }
