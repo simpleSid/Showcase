@@ -1,5 +1,5 @@
 const contactEmail = "hello@example.com";
-const telegramUrl = "https://t.me/simpleSid";
+const telegramUrl = "https://t.me/JustaSid";
 
 const form = document.querySelector("[data-contact-form]");
 const statusNode = document.querySelector("[data-form-status]");
