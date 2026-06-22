@@ -222,28 +222,27 @@ textarea {
   mix-blend-mode: multiply;
 }
 
-.intro-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border-bottom: 1px solid var(--line);
+.page-rift {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(38px, 4.2vw, 76px);
+  margin-block: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.intro-strip span {
-  min-height: 72px;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  border-right: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-align: center;
-  text-transform: uppercase;
+.page-rift img {
+  width: min(100%, 2000px);
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  filter: grayscale(1) contrast(1.08);
 }
 
-.intro-strip span:last-child {
-  border-right: 0;
+.page-rift-flip img {
+  transform: scaleX(-1);
 }
 
 .projects-section,
@@ -365,8 +364,6 @@ textarea {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(280px, 0.9fr);
   gap: clamp(28px, 7vw, 110px);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
   background:
     linear-gradient(90deg, transparent 0 49.8%, var(--line) 49.8% 50%, transparent 50%),
     var(--bg);
@@ -479,12 +476,8 @@ textarea {
     clip-path: none;
   }
 
-  .intro-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .intro-strip span {
-    border-bottom: 1px solid var(--line);
+  .page-rift {
+    height: 48px;
   }
 
   .about-section {
@@ -519,13 +512,8 @@ textarea {
     padding-inline: 18px;
   }
 
-  .intro-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .intro-strip span {
-    min-height: 56px;
-    border-right: 0;
+  .page-rift {
+    height: 34px;
   }
 
   .project-card::after {
