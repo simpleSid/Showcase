@@ -8,15 +8,17 @@
       name="description"
       content="Витрина лендингов: проекты, подход и форма связи для заказа посадочной страницы."
     />
+    <meta name="theme-color" content="#fafafa" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Manrope:wght@400;500;700;800&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#top">К основному содержанию</a>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Showcase">
         <span>show</span><span>case</span>
@@ -28,7 +30,7 @@
       </nav>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-panel">
           <p class="hero-note">Landing pages / portfolio / contact</p>
@@ -44,69 +46,456 @@
           </div>
         </div>
         <div class="hero-image" aria-hidden="true">
-          <img src="assets/hero-showcase.webp" alt="" />
+          <img src="assets/hero-showcase.webp" alt="" width="1800" height="1014" fetchpriority="high" />
           <span class="hero-cut"></span>
         </div>
       </section>
 
       <div class="page-rift" aria-hidden="true">
-        <img src="assets/page-rift-selected.png" alt="" />
+        <img src="assets/page-rift-selected.png" alt="" width="2000" height="180" />
       </div>
 
       <section class="projects-section" id="projects" aria-labelledby="projects-title">
-        <div class="section-head" data-reveal="section-title">
+        <div class="section-head projects-head" data-reveal="section-title">
           <p>Галерея проектов</p>
-          <h2 id="projects-title">Вы можете открыть проекты и оценить их в рабочем виде.</h2>
+          <h2 id="projects-title">Живая витрина работ для быстрой оценки.</h2>
+          <div class="projects-summary" aria-label="Сводка по галерее">
+            <span><strong>12</strong> карточек</span>
+            <span><strong>02</strong> проекта</span>
+            <span>Повторяющиеся ссылки показывают разные сценарии подачи работ</span>
+          </div>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card project-card-large" data-project-card data-reveal="project-card">
-            <a href="products/Lui/index.html" aria-label="Открыть проект Луи">
-              <figure>
-                <img src="products/previews/lui.png" alt="Скриншот лендинга ресторана Луи" />
+        <div class="project-grid" aria-label="Галерея работ">
+          <article
+            class="project-card project-card-featured project-card-warm"
+            data-project-card
+            data-reveal="project-card"
+          >
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 1">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Первый экран лендинга ресторана Луи"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
               </figure>
               <div class="project-copy">
-                <span>Restaurant landing</span>
+                <div class="project-meta">
+                  <span>Restaurant landing</span>
+                  <span>01 / 12</span>
+                </div>
                 <h3>Луи</h3>
                 <p>
                   Лендинг ресторана с выразительным первым экраном, меню, отзывами,
                   контактами и понятным сценарием бронирования.
                 </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Атмосфера</li>
+                  <li>Меню</li>
+                  <li>Бронь</li>
+                </ul>
               </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
             </a>
           </article>
 
-          <article class="project-card" data-project-card data-reveal="project-card">
-            <a href="products/ChildSquare/index.html" aria-label="Открыть проект ChildSquare">
-              <figure>
+          <article class="project-card project-card-green" data-project-card data-reveal="project-card">
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 2"
+            >
+              <figure class="project-media">
                 <img
                   src="products/previews/childsquare.png"
-                  alt="Скриншот лендинга ChildSquare"
+                  alt="Первый экран лендинга ChildSquare"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
                 />
               </figure>
               <div class="project-copy">
-                <span>Construction landing</span>
-                <h3>ChildSquare</h3>
+                <div class="project-meta">
+                  <span>Construction landing</span>
+                  <span>02 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
                 <p>
                   Лендинг для B2B-проекта: сильная визуальная подача, описание систем,
                   процесс работы и заявка на расчёт.
                 </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>B2B</li>
+                  <li>Каталог</li>
+                  <li>Заявка</li>
+                </ul>
               </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
             </a>
           </article>
+
+          <article class="project-card project-card-warm" data-project-card data-reveal="project-card">
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 3">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Превью лендинга ресторана Луи"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Hospitality page</span>
+                  <span>03 / 12</span>
+                </div>
+                <h3>Луи</h3>
+                <p>
+                  Плотная визуальная подача с акцентом на настроение заведения,
+                  доверие и понятный путь к бронированию.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Hero</li>
+                  <li>Отзывы</li>
+                  <li>Контакты</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article class="project-card project-card-green" data-project-card data-reveal="project-card">
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 4"
+            >
+              <figure class="project-media">
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Превью лендинга ChildSquare"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Outdoor systems</span>
+                  <span>04 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
+                <p>
+                  Страница объясняет сложный продукт через сценарии, материалы,
+                  этапы производства и быстрый выход на заявку.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>Процесс</li>
+                  <li>Системы</li>
+                  <li>Расчёт</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article class="project-card project-card-warm" data-project-card data-reveal="project-card">
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 5">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Скриншот страницы ресторана Луи"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Restaurant landing</span>
+                  <span>05 / 12</span>
+                </div>
+                <h3>Луи</h3>
+                <p>
+                  Проект показывает, как посадочная страница может держать атмосферу
+                  бренда и не терять коммерческую ясность.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Стиль</li>
+                  <li>Сетка</li>
+                  <li>CTA</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article
+            class="project-card project-card-wide project-card-green"
+            data-project-card
+            data-reveal="project-card"
+          >
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 6"
+            >
+              <figure class="project-media">
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Скриншот страницы ChildSquare"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Construction landing</span>
+                  <span>06 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
+                <p>
+                  Длинный лендинг для производственного проекта, где важны структура,
+                  наглядность и спокойная уверенность.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>Адаптив</li>
+                  <li>Подача</li>
+                  <li>Лид</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article
+            class="project-card project-card-wide project-card-warm"
+            data-project-card
+            data-reveal="project-card"
+          >
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 7">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Визуальное превью страницы ресторана Луи"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Brand atmosphere</span>
+                  <span>07 / 12</span>
+                </div>
+                <h3>Луи</h3>
+                <p>
+                  Пример того, как ресторанная страница держит характер бренда через
+                  фотографию, крупную типографику и короткий путь к действию.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Фото</li>
+                  <li>Ритм</li>
+                  <li>Бронь</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article class="project-card project-card-green" data-project-card data-reveal="project-card">
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 8"
+            >
+              <figure class="project-media">
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Визуальное превью страницы ChildSquare"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Lead generation</span>
+                  <span>08 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
+                <p>
+                  Карточка показывает коммерческий фокус: от демонстрации площадок к
+                  заявке на расчёт без лишних промежуточных шагов.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>Лиды</li>
+                  <li>Форма</li>
+                  <li>Польза</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article class="project-card project-card-warm" data-project-card data-reveal="project-card">
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 9">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Карточка лендинга ресторана Луи в галерее"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Conversion path</span>
+                  <span>09 / 12</span>
+                </div>
+                <h3>Луи</h3>
+                <p>
+                  Ещё один ракурс на посадочную страницу: посетитель быстро понимает
+                  атмосферу, предложение и следующий шаг.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Путь</li>
+                  <li>Ясность</li>
+                  <li>CTA</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article
+            class="project-card project-card-featured project-card-green"
+            data-project-card
+            data-reveal="project-card"
+          >
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 10"
+            >
+              <figure class="project-media">
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Крупная карточка лендинга ChildSquare в галерее"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Product explanation</span>
+                  <span>10 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
+                <p>
+                  Формат для сложного продукта, где важно развернуть преимущества,
+                  показать материалы и довести клиента до понятного запроса.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>Материалы</li>
+                  <li>Сценарии</li>
+                  <li>Расчёт</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article class="project-card project-card-warm" data-project-card data-reveal="project-card">
+            <a class="project-link" href="products/Lui/index.html" aria-label="Открыть проект Луи, карточка 11">
+              <figure class="project-media">
+                <img
+                  src="products/previews/lui.png"
+                  alt="Пример карточки проекта Луи в портфолио"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Hospitality detail</span>
+                  <span>11 / 12</span>
+                </div>
+                <h3>Луи</h3>
+                <p>
+                  Карточка подчёркивает детали: тональность, доверие, контактные блоки
+                  и ощущение реального места, а не шаблонной страницы.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта Луи">
+                  <li>Детали</li>
+                  <li>Доверие</li>
+                  <li>Адрес</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
+          <article
+            class="project-card project-card-wide project-card-green"
+            data-project-card
+            data-reveal="project-card"
+          >
+            <a
+              class="project-link"
+              href="products/ChildSquare/index.html"
+              aria-label="Открыть проект ChildSquare, карточка 12"
+            >
+              <figure class="project-media">
+                <img
+                  src="products/previews/childsquare.png"
+                  alt="Широкая карточка лендинга ChildSquare в портфолио"
+                  width="1440"
+                  height="1080"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span>Responsive showcase</span>
+                  <span>12 / 12</span>
+                </div>
+                <h3>Child<wbr />Square</h3>
+                <p>
+                  Завершающий пример показывает, как проект выдерживает расширенную
+                  галерею и остаётся читаемым в плотной портфельной сетке.
+                </p>
+                <ul class="project-tags" aria-label="Особенности проекта ChildSquare">
+                  <li>Сетка</li>
+                  <li>Адаптив</li>
+                  <li>Рост</li>
+                </ul>
+              </div>
+              <span class="project-open" aria-hidden="true">Открыть <span>↗</span></span>
+            </a>
+          </article>
+
         </div>
       </section>
 
       <div class="page-rift page-rift-flip" aria-hidden="true">
-        <img src="assets/page-rift-selected.png" alt="" />
+        <img src="assets/page-rift-selected.png" alt="" width="2000" height="180" />
       </div>
 
       <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="about-title" data-reveal="block-left">
+        <div class="about-title" data-reveal="block-right">
           <p>Обо мне</p>
           <h2 id="about-title">Я создаю лендинги, которые понятно раскрывают суть.</h2>
         </div>
-        <div class="about-copy" data-reveal="block-right">
+        <div class="about-copy" data-reveal="block-left">
           <p>
             Беру Вашу идею, услугу или продукт и превращаю их в страницу, где посетителю
             понятно: что Вы предлагаете, почему Вам можно доверять и как оставить заявку.
@@ -119,40 +508,60 @@
       </section>
 
       <div class="page-rift" aria-hidden="true">
-        <img src="assets/page-rift-selected.png" alt="" />
+        <img src="assets/page-rift-selected.png" alt="" width="2000" height="180" />
       </div>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-aside" data-reveal="block-left">
           <p>Связь</p>
           <h2 id="contact-title">Расскажите, какой лендинг Вам нужен.</h2>
-          <a class="telegram-link" data-telegram-link href="https://t.me/JustaSid">Telegram</a>
+          <p class="contact-lead">
+            Достаточно пары строк: ниша, цель страницы и удобный способ связи. Я отвечу и
+            предложу первый вектор структуры.
+          </p>
+          <a class="telegram-link" data-telegram-link href="https://t.me/JustaSid">
+            Telegram <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
-        <form class="contact-form" data-contact-form data-reveal="form-stack">
-          <label>
-            Имя
-            <input name="name" autocomplete="name" placeholder="Как к Вам обращаться" required />
-          </label>
-          <label>
-            Контакт для связи
-            <input name="contact" autocomplete="email" placeholder="Почта или Telegram" required />
-          </label>
-          <label>
-            Описание задачи
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Например: лендинг для Вашей услуги, проекта или продукта"
-              required
-            ></textarea>
-          </label>
-          <div class="form-actions">
-            <button class="button button-dark" type="submit">Написать по почте</button>
-            <a class="button button-light" data-telegram-link href="https://t.me/JustaSid">В Telegram</a>
-          </div>
-          <p class="form-status" data-form-status aria-live="polite"></p>
-        </form>
+        <div class="contact-form-shell" data-reveal="form-stack">
+          <form class="contact-form" data-contact-form novalidate autocomplete="off">
+            <label data-field="name">
+              <span>Имя</span>
+              <input
+                name="name"
+                autocomplete="off"
+                placeholder="Как к Вам обращаться…"
+                aria-describedby="name-error"
+              />
+              <small class="field-error" id="name-error" data-error-for="name"></small>
+            </label>
+            <label data-field="contact">
+              <span>Контакт для связи</span>
+              <input
+                name="contact"
+                autocomplete="off"
+                placeholder="Почта или Telegram…"
+                aria-describedby="contact-error"
+              />
+              <small class="field-error" id="contact-error" data-error-for="contact"></small>
+            </label>
+            <label data-field="message">
+              <span>Описание задачи</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Например: лендинг для Вашей услуги, проекта или продукта…"
+                aria-describedby="message-error"
+              ></textarea>
+              <small class="field-error" id="message-error" data-error-for="message"></small>
+            </label>
+            <div class="form-actions">
+              <button class="button button-dark" type="submit">Отправить</button>
+            </div>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </section>
     </main>
 

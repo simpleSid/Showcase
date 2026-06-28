@@ -1,4 +1,3 @@
-const contactEmail = "hello@example.com";
 const telegramUrl = "https://t.me/JustaSid";
 
 const form = document.querySelector("[data-contact-form]");
@@ -49,25 +48,149 @@ if (revealNodes.length > 0) {
   }
 }
 
+const fieldHintTimers = new WeakMap();
+
+const showFieldError = (error, message) => {
+  const activeTimer = fieldHintTimers.get(error);
+
+  if (activeTimer) {
+    window.clearTimeout(activeTimer);
+  }
+
+  error.textContent = message;
+  error.classList.remove("is-hiding");
+  error.classList.add("is-visible");
+};
+
+const hideFieldError = (error) => {
+  const activeTimer = fieldHintTimers.get(error);
+
+  if (activeTimer) {
+    window.clearTimeout(activeTimer);
+  }
+
+  if (!error.textContent) {
+    error.classList.remove("is-visible", "is-hiding");
+    return;
+  }
+
+  error.classList.remove("is-visible");
+  error.classList.add("is-hiding");
+
+  const timer = window.setTimeout(() => {
+    error.textContent = "";
+    error.classList.remove("is-hiding");
+    fieldHintTimers.delete(error);
+  }, 220);
+
+  fieldHintTimers.set(error, timer);
+};
+
 if (form) {
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const contact = String(data.get("contact") || "").trim();
     const message = String(data.get("message") || "").trim();
+    const submitButton = form.querySelector("button[type='submit']");
+    const fieldErrors = {
+      name: "Укажите имя.",
+      contact: "Укажите контакт для связи.",
+      message: "Опишите задачу.",
+    };
+    const firstInvalidField = !name ? "name" : !contact ? "contact" : !message ? "message" : "";
 
-    const subject = encodeURIComponent("Заявка на лендинг");
-    const body = encodeURIComponent(
-      `Имя: ${name}\nКонтакт: ${contact}\n\nОписание задачи:\n${message}`
-    );
+    Object.keys(fieldErrors).forEach((fieldName) => {
+      const field = form.elements[fieldName];
+      const label = form.querySelector(`[data-field="${fieldName}"]`);
+      const error = form.querySelector(`[data-error-for="${fieldName}"]`);
+      const isInvalid = fieldName === firstInvalidField;
 
-    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+      if (!field || !label || !error) {
+        return;
+      }
+
+      label.classList.toggle("has-error", isInvalid);
+      field.setAttribute("aria-invalid", String(isInvalid));
+
+      if (isInvalid) {
+        showFieldError(error, fieldErrors[fieldName]);
+      } else {
+        hideFieldError(error);
+      }
+    });
+
+    if (firstInvalidField) {
+      if (statusNode) {
+        statusNode.classList.remove("is-error");
+        statusNode.textContent = "";
+      }
+
+      form.elements[firstInvalidField].focus();
+      return;
+    }
 
     if (statusNode) {
-      statusNode.textContent =
-        "Открылся почтовый клиент. Если письмо не появилось, напишите в Telegram.";
+      statusNode.classList.remove("is-error");
+      statusNode.textContent = "Отправляем заявку...";
     }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      const response = await fetch("send.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, contact, message }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || "Не удалось отправить заявку.");
+      }
+
+      form.reset();
+
+      if (statusNode) {
+        statusNode.classList.remove("is-error");
+        statusNode.textContent = result.message || "Заявка отправлена. Я свяжусь с Вами.";
+      }
+    } catch (error) {
+      if (statusNode) {
+        statusNode.classList.add("is-error");
+        statusNode.textContent = error.message;
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
+  });
+
+  form.querySelectorAll("input, textarea").forEach((field) => {
+    field.addEventListener("input", () => {
+      const label = field.closest("[data-field]");
+      const error = form.querySelector(`[data-error-for="${field.name}"]`);
+
+      if (label) {
+        label.classList.remove("has-error");
+      }
+
+      field.removeAttribute("aria-invalid");
+
+      if (error) {
+        hideFieldError(error);
+      }
+
+      if (statusNode) {
+        statusNode.textContent = "";
+      }
+    });
   });
 }
