@@ -54,13 +54,13 @@
       </div>
 
       <section class="projects-section" id="projects" aria-labelledby="projects-title">
-        <div class="section-head">
+        <div class="section-head" data-reveal="section-title">
           <p>Галерея проектов</p>
           <h2 id="projects-title">Вы можете открыть проекты и оценить их в рабочем виде.</h2>
         </div>
 
         <div class="project-grid">
-          <article class="project-card project-card-large" data-project-card>
+          <article class="project-card project-card-large" data-project-card data-reveal="project-card">
             <a href="products/Lui/index.html" aria-label="Открыть проект Луи">
               <figure>
                 <img src="products/previews/lui.png" alt="Скриншот лендинга ресторана Луи" />
@@ -76,7 +76,7 @@
             </a>
           </article>
 
-          <article class="project-card" data-project-card>
+          <article class="project-card" data-project-card data-reveal="project-card">
             <a href="products/ChildSquare/index.html" aria-label="Открыть проект ChildSquare">
               <figure>
                 <img
@@ -102,11 +102,11 @@
       </div>
 
       <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="about-title">
+        <div class="about-title" data-reveal="block-left">
           <p>Обо мне</p>
           <h2 id="about-title">Я создаю лендинги, которые понятно раскрывают суть.</h2>
         </div>
-        <div class="about-copy">
+        <div class="about-copy" data-reveal="block-right">
           <p>
             Беру Вашу идею, услугу или продукт и превращаю их в страницу, где посетителю
             понятно: что Вы предлагаете, почему Вам можно доверять и как оставить заявку.
@@ -123,13 +123,13 @@
       </div>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-aside">
+        <div class="contact-aside" data-reveal="block-left">
           <p>Связь</p>
           <h2 id="contact-title">Расскажите, какой лендинг Вам нужен.</h2>
           <a class="telegram-link" data-telegram-link href="https://t.me/JustaSid">Telegram</a>
         </div>
 
-        <form class="contact-form" data-contact-form>
+        <form class="contact-form" data-contact-form data-reveal="form-stack">
           <label>
             Имя
             <input name="name" autocomplete="name" placeholder="Как к Вам обращаться" required />

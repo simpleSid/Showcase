@@ -8,6 +8,9 @@
   --accent: oklch(0.7 0.18 23);
   --soft: oklch(0.94 0 0);
   --shadow: 0 24px 70px oklch(0.1 0 0 / 0.16);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --display: "Archivo Black", Impact, sans-serif;
   --body: "Manrope", Arial, sans-serif;
 }
@@ -71,6 +74,7 @@ textarea {
   background: oklch(0.985 0 0 / 0.88);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
+  animation: header-in 820ms var(--ease-out-quint) both;
 }
 
 .brand {
@@ -123,6 +127,7 @@ textarea {
   background: var(--panel);
   color: var(--panel-ink);
   clip-path: polygon(0 0, 92% 0, 78% 100%, 0 100%);
+  animation: hero-panel-in 1250ms var(--ease-out-expo) both;
 }
 
 .hero-note,
@@ -165,6 +170,25 @@ textarea {
   margin-top: 34px;
 }
 
+.hero-note,
+.hero h1,
+.hero p:not(.hero-note),
+.hero-actions {
+  animation: hero-copy-in 1120ms var(--ease-out-quint) both;
+}
+
+.hero h1 {
+  animation-delay: 130ms;
+}
+
+.hero p:not(.hero-note) {
+  animation-delay: 260ms;
+}
+
+.hero-actions {
+  animation-delay: 390ms;
+}
+
 .button {
   display: inline-flex;
   min-height: 44px;
@@ -204,6 +228,7 @@ textarea {
   min-height: 520px;
   overflow: hidden;
   background: var(--soft);
+  animation: hero-image-mask 1360ms var(--ease-out-expo) 120ms both;
 }
 
 .hero-image img {
@@ -211,6 +236,8 @@ textarea {
   height: 100%;
   object-fit: cover;
   filter: grayscale(1) contrast(1.08);
+  transform-origin: center;
+  animation: hero-image-in 1520ms var(--ease-out-expo) 120ms both;
 }
 
 .hero-cut {
@@ -222,6 +249,7 @@ textarea {
   border: 12px solid var(--bg);
   background: var(--panel);
   mix-blend-mode: multiply;
+  animation: hero-cut-in 980ms var(--ease-out-quint) 680ms both;
 }
 
 .page-rift {
@@ -249,6 +277,70 @@ textarea {
 
 .page-rift-flip img {
   transform: scaleX(-1);
+}
+
+[data-reveal] {
+  transition:
+    opacity 1040ms var(--ease-out-quint),
+    transform 1240ms var(--ease-out-expo),
+    clip-path 1280ms var(--ease-out-expo),
+    filter 1080ms var(--ease-out-quint);
+}
+
+.reveal-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, 56px, 0);
+}
+
+.reveal-ready [data-reveal="section-title"]:not(.is-visible) {
+  transform: translate3d(0, 42px, 0);
+}
+
+.reveal-ready [data-reveal="project-card"]:not(.is-visible) {
+  filter: blur(12px) grayscale(1);
+  transform: translate3d(0, 82px, 0) rotate(-1deg);
+}
+
+[data-reveal="project-card"]:nth-child(2) {
+  transition-delay: 180ms;
+}
+
+.reveal-ready [data-reveal="block-left"]:not(.is-visible) {
+  transform: translate3d(-72px, 0, 0);
+}
+
+.reveal-ready [data-reveal="block-right"]:not(.is-visible),
+.reveal-ready [data-reveal="form-stack"]:not(.is-visible) {
+  transform: translate3d(72px, 0, 0);
+}
+
+[data-reveal="form-stack"] label,
+[data-reveal="form-stack"] .form-actions,
+[data-reveal="form-stack"] .form-status {
+  transition:
+    opacity 820ms var(--ease-out-quint),
+    transform 960ms var(--ease-out-expo);
+}
+
+.reveal-ready [data-reveal="form-stack"]:not(.is-visible) label,
+.reveal-ready [data-reveal="form-stack"]:not(.is-visible) .form-actions,
+.reveal-ready [data-reveal="form-stack"]:not(.is-visible) .form-status {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+}
+
+[data-reveal="form-stack"].is-visible label:nth-child(2) {
+  transition-delay: 130ms;
+}
+
+[data-reveal="form-stack"].is-visible label:nth-child(3) {
+  transition-delay: 260ms;
+}
+
+[data-reveal="form-stack"].is-visible .form-actions,
+[data-reveal="form-stack"].is-visible .form-status {
+  transition-delay: 390ms;
 }
 
 .projects-section,
@@ -470,22 +562,67 @@ textarea {
   color: var(--muted);
 }
 
-[data-project-card] {
-  animation: rise 700ms ease both;
-}
-
-[data-project-card]:nth-child(2) {
-  animation-delay: 120ms;
-}
-
-@keyframes rise {
+@keyframes header-in {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(-32px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hero-panel-in {
+  from {
+    filter: blur(10px);
+    transform: translateX(-54px);
+  }
+  to {
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-34px, 34px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-image-mask {
+  from {
+    clip-path: inset(0 0 0 28%);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes hero-image-in {
+  from {
+    filter: grayscale(1) contrast(1.2) blur(10px);
+    transform: scale(1.09);
+  }
+  to {
+    filter: grayscale(1) contrast(1.08) blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-cut-in {
+  from {
+    opacity: 0;
+    transform: translate3d(42px, 42px, 0) scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -560,5 +697,13 @@ textarea {
     scroll-behavior: auto !important;
     animation-duration: 1ms !important;
     transition-duration: 1ms !important;
+  }
+
+  .reveal-ready [data-reveal],
+  .reveal-ready [data-reveal] * {
+    opacity: 1 !important;
+    clip-path: none !important;
+    filter: none !important;
+    transform: none !important;
   }
 }
