@@ -62,6 +62,8 @@ const initProjectCarousel = (carousel) => {
   let dragStartOffset = 0;
   let isDragging = false;
   let didDrag = false;
+  let activePointerId = 0;
+  let suppressNextClick = false;
 
   if (!viewport || !track || slides.length === 0) {
     return;
@@ -143,39 +145,57 @@ const initProjectCarousel = (carousel) => {
 
     isDragging = true;
     didDrag = false;
+    suppressNextClick = false;
+    activePointerId = event.pointerId;
     dragStartX = event.clientX;
     dragStartOffset = getSlideOffset(activeIndex);
-    viewport.classList.add("is-dragging");
-    track.style.transition = "none";
-    viewport.setPointerCapture(event.pointerId);
     stopAutoplay();
   });
 
   viewport.addEventListener("pointermove", (event) => {
-    if (!isDragging) {
+    if (!isDragging || event.pointerId !== activePointerId) {
       return;
     }
 
     const deltaX = event.clientX - dragStartX;
-    didDrag = didDrag || Math.abs(deltaX) > 8;
+
+    if (!didDrag && Math.abs(deltaX) > 8) {
+      didDrag = true;
+      viewport.classList.add("is-dragging");
+      track.style.transition = "none";
+      viewport.setPointerCapture(event.pointerId);
+    }
+
+    if (!didDrag) {
+      return;
+    }
+
     track.style.transform = `translate3d(${-dragStartOffset + deltaX}px, 0, 0)`;
   });
 
   const finishDrag = (event) => {
-    if (!isDragging) {
+    if (!isDragging || event.pointerId !== activePointerId) {
       return;
     }
 
     const deltaX = event.clientX - dragStartX;
     isDragging = false;
+    activePointerId = 0;
+
+    if (viewport.hasPointerCapture?.(event.pointerId)) {
+      viewport.releasePointerCapture(event.pointerId);
+    }
+
     viewport.classList.remove("is-dragging");
     track.style.transition = "";
 
-    if (Math.abs(deltaX) > 70) {
-      setActiveSlide(activeIndex + (deltaX < 0 ? 1 : -1));
-    } else {
-      setActiveSlide(activeIndex);
+    if (!didDrag) {
+      startAutoplay();
+      return;
     }
+
+    suppressNextClick = event.type === "pointerup";
+    setActiveSlide(activeIndex + (deltaX < 0 ? 1 : -1));
 
     startAutoplay();
   };
@@ -187,13 +207,21 @@ const initProjectCarousel = (carousel) => {
   carousel.addEventListener("focusin", stopAutoplay);
   carousel.addEventListener("focusout", startAutoplay);
   carousel.addEventListener(
+    "dragstart",
+    (event) => {
+      event.preventDefault();
+    },
+    true
+  );
+  carousel.addEventListener(
     "click",
     (event) => {
-      if (!didDrag) {
+      if (!suppressNextClick) {
         return;
       }
 
       event.preventDefault();
+      suppressNextClick = false;
       didDrag = false;
     },
     true

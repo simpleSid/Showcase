@@ -56,3 +56,36 @@ test("carousel offset calculation uses viewport content width", () => {
   assert.match(js, /paddingRight/);
   assert.match(js, /track\.scrollWidth - viewportWidth/);
 });
+
+test("carousel does not capture the pointer on press so project links stay clickable", () => {
+  const pointerDownMatch = js.match(
+    /viewport\.addEventListener\("pointerdown", \(event\) => \{(?<body>[\s\S]*?)\n  \}\);/
+  );
+
+  assert.ok(pointerDownMatch?.groups?.body, "Missing pointerdown handler");
+  assert.match(pointerDownMatch.groups.body, /suppressNextClick = false/);
+  assert.doesNotMatch(pointerDownMatch.groups.body, /setPointerCapture/);
+  assert.doesNotMatch(pointerDownMatch.groups.body, /classList\.add\("is-dragging"\)/);
+  assert.doesNotMatch(pointerDownMatch.groups.body, /track\.style\.transition = "none"/);
+
+  const pointerMoveMatch = js.match(
+    /viewport\.addEventListener\("pointermove", \(event\) => \{(?<body>[\s\S]*?)\n  \}\);/
+  );
+
+  assert.ok(pointerMoveMatch?.groups?.body, "Missing pointermove handler");
+  assert.match(pointerMoveMatch.groups.body, /Math\.abs\(deltaX\) > 8/);
+  assert.match(pointerMoveMatch.groups.body, /setPointerCapture/);
+});
+
+test("dragging an active project card flips the carousel by drag direction", () => {
+  const finishDragMatch = js.match(/const finishDrag = \(event\) => \{(?<body>[\s\S]*?)\n  \};/);
+
+  assert.ok(finishDragMatch?.groups?.body, "Missing finishDrag handler");
+  assert.doesNotMatch(finishDragMatch.groups.body, /Math\.abs\(deltaX\) > 70/);
+  assert.match(finishDragMatch.groups.body, /setActiveSlide\(activeIndex \+ \(deltaX < 0 \? 1 : -1\)\)/);
+});
+
+test("carousel prevents native browser dragging of project links", () => {
+  assert.match(js, /carousel\.addEventListener\(\s*"dragstart"/);
+  assert.match(js, /dragstart[\s\S]*?event\.preventDefault\(\)/);
+});
