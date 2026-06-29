@@ -4,6 +4,7 @@ const form = document.querySelector("[data-contact-form]");
 const statusNode = document.querySelector("[data-form-status]");
 const telegramLinks = document.querySelectorAll("[data-telegram-link]");
 const revealNodes = document.querySelectorAll("[data-reveal]");
+const carouselNode = document.querySelector("[data-project-carousel]");
 
 telegramLinks.forEach((link) => {
   link.href = telegramUrl;
@@ -46,6 +47,194 @@ if (revealNodes.length > 0) {
 
     document.documentElement.classList.add("reveal-ready");
   }
+}
+
+const initProjectCarousel = (carousel) => {
+  const viewport = carousel.querySelector("[data-carousel-viewport]");
+  const track = carousel.querySelector("[data-carousel-track]");
+  const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+  const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeIndex = 0;
+  let autoplayTimer = 0;
+  let dragStartX = 0;
+  let dragStartOffset = 0;
+  let isDragging = false;
+  let didDrag = false;
+
+  if (!viewport || !track || slides.length === 0) {
+    return;
+  }
+
+  const getViewportContentWidth = () => {
+    const viewportStyles = window.getComputedStyle(viewport);
+    const paddingLeft = Number.parseFloat(viewportStyles.paddingLeft) || 0;
+    const paddingRight = Number.parseFloat(viewportStyles.paddingRight) || 0;
+
+    return Math.max(0, viewport.clientWidth - paddingLeft - paddingRight);
+  };
+
+  const getSlideOffset = (index) => {
+    const slide = slides[index];
+    const viewportWidth = getViewportContentWidth();
+    const maxOffset = Math.max(0, track.scrollWidth - viewportWidth);
+    const centeredOffset = slide.offsetLeft - (viewportWidth - slide.clientWidth) / 2;
+
+    return Math.min(Math.max(0, centeredOffset), maxOffset);
+  };
+
+  const setActiveSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    const offset = getSlideOffset(activeIndex);
+
+    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      const links = slide.querySelectorAll("a");
+
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+
+      links.forEach((link) => {
+        link.tabIndex = isActive ? 0 : -1;
+      });
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      if (dotIndex === activeIndex) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayTimer) {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = 0;
+    }
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+
+    if (reducedMotion.matches || slides.length < 2) {
+      return;
+    }
+
+    autoplayTimer = window.setInterval(() => {
+      setActiveSlide(activeIndex + 1);
+    }, 4600);
+  };
+
+  const goToSlide = (index) => {
+    setActiveSlide(index);
+    startAutoplay();
+  };
+
+  previousButton?.addEventListener("click", () => {
+    goToSlide(activeIndex - 1);
+  });
+
+  nextButton?.addEventListener("click", () => {
+    goToSlide(activeIndex + 1);
+  });
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      goToSlide(dotIndex);
+    });
+  });
+
+  viewport.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 && event.pointerType === "mouse") {
+      return;
+    }
+
+    isDragging = true;
+    didDrag = false;
+    dragStartX = event.clientX;
+    dragStartOffset = getSlideOffset(activeIndex);
+    viewport.classList.add("is-dragging");
+    track.style.transition = "none";
+    viewport.setPointerCapture(event.pointerId);
+    stopAutoplay();
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    if (!isDragging) {
+      return;
+    }
+
+    const deltaX = event.clientX - dragStartX;
+    didDrag = didDrag || Math.abs(deltaX) > 8;
+    track.style.transform = `translate3d(${-dragStartOffset + deltaX}px, 0, 0)`;
+  });
+
+  const finishDrag = (event) => {
+    if (!isDragging) {
+      return;
+    }
+
+    const deltaX = event.clientX - dragStartX;
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+    track.style.transition = "";
+
+    if (Math.abs(deltaX) > 70) {
+      setActiveSlide(activeIndex + (deltaX < 0 ? 1 : -1));
+    } else {
+      setActiveSlide(activeIndex);
+    }
+
+    startAutoplay();
+  };
+
+  viewport.addEventListener("pointerup", finishDrag);
+  viewport.addEventListener("pointercancel", finishDrag);
+  carousel.addEventListener("pointerenter", stopAutoplay);
+  carousel.addEventListener("pointerleave", startAutoplay);
+  carousel.addEventListener("focusin", stopAutoplay);
+  carousel.addEventListener("focusout", startAutoplay);
+  carousel.addEventListener(
+    "click",
+    (event) => {
+      if (!didDrag) {
+        return;
+      }
+
+      event.preventDefault();
+      didDrag = false;
+    },
+    true
+  );
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(() => {
+      setActiveSlide(activeIndex);
+    });
+    observer.observe(viewport);
+  } else {
+    window.addEventListener("resize", () => {
+      setActiveSlide(activeIndex);
+    });
+  }
+
+  reducedMotion.addEventListener?.("change", () => {
+    setActiveSlide(activeIndex);
+    startAutoplay();
+  });
+
+  setActiveSlide(0);
+  startAutoplay();
+};
+
+if (carouselNode) {
+  initProjectCarousel(carouselNode);
 }
 
 const fieldHintTimers = new WeakMap();
