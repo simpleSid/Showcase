@@ -6,13 +6,32 @@ const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const css = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
 const js = readFileSync(new URL("../main.js", import.meta.url), "utf8");
 
-test("projects gallery is a cursor-controlled carousel with four slides", () => {
+test("projects gallery is a cursor-controlled carousel with two project slides", () => {
   assert.match(html, /data-project-carousel/);
-  assert.equal(html.match(/data-carousel-slide/g)?.length, 4);
+  assert.equal(html.match(/data-carousel-slide/g)?.length, 2);
   assert.match(html, /data-carousel-prev/);
   assert.match(html, /data-carousel-next/);
   assert.match(html, /aria-label="Предыдущий проект"/);
   assert.match(html, /aria-label="Следующий проект"/);
+});
+
+test("project carousel controls show only previous and next arrows", () => {
+  assert.doesNotMatch(html, /data-carousel-dot/);
+  assert.doesNotMatch(html, /project-carousel-dots/);
+  assert.doesNotMatch(css, /project-carousel-dots/);
+  assert.doesNotMatch(js, /querySelectorAll\("\[data-carousel-dot\]"\)/);
+});
+
+test("projects gallery header does not show the projects summary block", () => {
+  assert.doesNotMatch(html, /class="projects-summary"/);
+  assert.doesNotMatch(html, /Сводка по галерее/);
+  assert.doesNotMatch(css, /\.projects-summary/);
+});
+
+test("projects gallery contains only live project cards", () => {
+  assert.doesNotMatch(html, /Show<wbr \/>case|Mobile Flow|project-slide-mobile/);
+  assert.match(html, /Луи/);
+  assert.match(html, /Child<wbr \/>Square/);
 });
 
 test("carousel has autoplay, drag navigation, and reduced-motion support", () => {
@@ -29,13 +48,6 @@ test("active project slide uses the wide showcase treatment", () => {
   assert.match(css, /\.project-slide\.is-active/);
   assert.match(css, /cursor:\s*grab/);
   assert.match(css, /--slide-size:\s*min\(100%,\s*1320px\)/);
-});
-
-test("mobile flow slide uses a dedicated phone preview treatment", () => {
-  assert.match(html, /class="project-slide project-slide-mobile"/);
-  assert.match(css, /\.project-slide-mobile\s+\.project-media/);
-  assert.match(css, /\.project-slide-mobile\s+\.project-media img/);
-  assert.match(css, /object-position:\s*top center/);
 });
 
 test("carousel offset calculation uses viewport content width", () => {

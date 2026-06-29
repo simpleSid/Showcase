@@ -53,7 +53,6 @@ const initProjectCarousel = (carousel) => {
   const viewport = carousel.querySelector("[data-carousel-viewport]");
   const track = carousel.querySelector("[data-carousel-track]");
   const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
-  const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
   const previousButton = carousel.querySelector("[data-carousel-prev]");
   const nextButton = carousel.querySelector("[data-carousel-next]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -103,13 +102,6 @@ const initProjectCarousel = (carousel) => {
       });
     });
 
-    dots.forEach((dot, dotIndex) => {
-      if (dotIndex === activeIndex) {
-        dot.setAttribute("aria-current", "true");
-      } else {
-        dot.removeAttribute("aria-current");
-      }
-    });
   };
 
   const stopAutoplay = () => {
@@ -142,12 +134,6 @@ const initProjectCarousel = (carousel) => {
 
   nextButton?.addEventListener("click", () => {
     goToSlide(activeIndex + 1);
-  });
-
-  dots.forEach((dot, dotIndex) => {
-    dot.addEventListener("click", () => {
-      goToSlide(dotIndex);
-    });
   });
 
   viewport.addEventListener("pointerdown", (event) => {

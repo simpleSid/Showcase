@@ -59,11 +59,6 @@
         <div class="section-head projects-head" data-reveal="section-title">
           <p>Галерея проектов</p>
           <h2 id="projects-title">Мои проекты можно открыть и посмотреть вживую.</h2>
-          <div class="projects-summary" aria-label="Сводка по галерее">
-            <span><strong>04</strong> проекта</span>
-            <span><strong>02</strong> живые страницы</span>
-            <span>Тестовая подборка для оценки сетки из четырёх карточек</span>
-          </div>
         </div>
 
         <div
@@ -90,7 +85,7 @@
               <div class="project-copy">
                 <div class="project-meta">
                   <span>Restaurant landing</span>
-                  <span>01 / 04</span>
+                  <span>01 / 02</span>
                 </div>
                 <h3>Луи</h3>
                 <p>
@@ -127,7 +122,7 @@
               <div class="project-copy">
                 <div class="project-meta">
                   <span>Construction landing</span>
-                  <span>02 / 04</span>
+                  <span>02 / 02</span>
                 </div>
                 <h3>Child<wbr />Square</h3>
                 <p>
@@ -145,83 +140,12 @@
             </div>
           </article>
 
-          <article class="project-slide" data-carousel-slide>
-            <div class="project-card project-card-warm">
-            <a class="project-link" href="#top" aria-label="Открыть пример Showcase">
-              <figure class="project-media">
-                <img
-                  src="products/previews/showcase-desktop.png"
-                  alt="Десктопное превью страницы Showcase"
-                  width="1462"
-                  height="3756"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span>Portfolio page</span>
-                  <span>03 / 04</span>
-                </div>
-                <h3>Show<wbr />case</h3>
-                <p>
-                  Витрина работ с крупной типографикой, живыми ссылками на проекты,
-                  описанием подхода и короткой формой связи.
-                </p>
-                <ul class="project-tags" aria-label="Особенности примера Showcase">
-                  <li>Портфолио</li>
-                  <li>Сетка</li>
-                  <li>Форма</li>
-                </ul>
-              </div>
-              <span class="project-open" aria-hidden="true">Открыть проект <span>↗</span></span>
-            </a>
-            </div>
-          </article>
-
-          <article class="project-slide project-slide-mobile" data-carousel-slide>
-            <div class="project-card project-card-green">
-            <a class="project-link" href="#contact" aria-label="Открыть пример Mobile Flow">
-              <figure class="project-media">
-                <img
-                  src="products/previews/showcase-mobile.png"
-                  alt="Мобильное превью страницы Showcase"
-                  width="390"
-                  height="4233"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span>Responsive page</span>
-                  <span>04 / 04</span>
-                </div>
-                <h3>Mobile Flow</h3>
-                <p>
-                  Пример мобильной подачи: тот же визуальный характер, компактная
-                  навигация, читаемые карточки и быстрый переход к заявке.
-                </p>
-                <ul class="project-tags" aria-label="Особенности примера Mobile Flow">
-                  <li>Mobile</li>
-                  <li>Адаптив</li>
-                  <li>Контакт</li>
-                </ul>
-              </div>
-              <span class="project-open" aria-hidden="true">Открыть проект <span>↗</span></span>
-            </a>
-            </div>
-          </article>
             </div>
           </div>
           <div class="project-carousel-controls" aria-label="Управление галереей">
             <button class="project-carousel-button" type="button" data-carousel-prev aria-label="Предыдущий проект">
               <span aria-hidden="true">←</span>
             </button>
-            <div class="project-carousel-dots" aria-label="Навигация по проектам">
-              <button type="button" data-carousel-dot aria-label="Показать проект 1" aria-current="true"></button>
-              <button type="button" data-carousel-dot aria-label="Показать проект 2"></button>
-              <button type="button" data-carousel-dot aria-label="Показать проект 3"></button>
-              <button type="button" data-carousel-dot aria-label="Показать проект 4"></button>
-            </div>
             <button class="project-carousel-button" type="button" data-carousel-next aria-label="Следующий проект">
               <span aria-hidden="true">→</span>
             </button>
@@ -236,7 +160,7 @@
       <section class="about-section" id="about" aria-labelledby="about-title">
         <div class="about-title" data-reveal="block-right">
           <p>Обо мне</p>
-          <h2 id="about-title">Я создаю лендинги, которые понятно раскрывают суть.</h2>
+          <h2 id="about-title">Создаю лендинги, которые понятно раскрывают суть.</h2>
         </div>
         <div class="about-copy" data-reveal="block-left">
           <p>
@@ -262,9 +186,6 @@
             Достаточно пары строк: ниша, цель страницы и удобный способ связи. Я отвечу и
             предложу первый вектор структуры.
           </p>
-          <a class="telegram-link" data-telegram-link href="https://t.me/JustaSid">
-            Telegram <span aria-hidden="true">↗</span>
-          </a>
         </div>
 
         <div class="contact-form-shell" data-reveal="form-stack">
@@ -301,6 +222,9 @@
             </label>
             <div class="form-actions">
               <button class="button button-dark" type="submit">Отправить</button>
+              <a class="form-telegram-link" data-telegram-link href="https://t.me/JustaSid" aria-label="Написать в Telegram">
+                <img src="assets/icon-telegram.svg" alt="" width="22" height="22" loading="lazy" />
+              </a>
             </div>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
